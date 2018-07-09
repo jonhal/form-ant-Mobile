@@ -113,7 +113,9 @@ config json then make form
 }
 
 ##### 建议下载代码库，npm run start一下看一下demo，很快就能知道怎么使用了
-![avatar](https://raw.githubusercontent.com/jonhal/trans-form-base-ant/master/demo.png)
+![image](https://raw.githubusercontent.com/jonhal/trans-form-base-ant/master/demo.png)
+
+![image](https://github.com/872822645/danxuankuangDemo/blob/master/1.jpg)
 
 
 
