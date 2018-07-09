@@ -6,11 +6,11 @@ config json then make form
 通过json配置表，可以生成一个表单，表单中的控件基于ant生成
 
 ### Prerequisites
-webpack react ant 
-可以通过Npm下载包 或者直接使用src/源文件 参考demo使用
+基于ant-mobile，有一个ant-mobile可运行的环境
+然后在项目中直接使用src/components/TransForm 源文件 参考demo使用
 
 #### 举例
-1. 引入src源文件或者npm 下载包
+1. 引入src源文件
 2. 配置form控件项，是一个数组形式的json，比如下面的formArray
 3. ```        let list_tpl =
             <form>
@@ -113,3 +113,4 @@ webpack react ant
 }
 
 ##### 建议下载代码库，npm run start一下看一下demo，很快就能知道怎么使用了
+
