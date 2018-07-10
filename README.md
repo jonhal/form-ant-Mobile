@@ -111,6 +111,24 @@ config json then make form
         }
     ]
 }
+```
+
+
+| 配置项            | 说明                                       | 类型      | 必填   | 默认值     |
+| ---------------- | ---------------------------------------- | ------- | ---- | ------- |
+| type          | 填写控件类型，可以是input,select,imagePicker,text,popover | string  | 是    | 无       |
+| name             | 填写控件的name需要和后端约定作为提交的key | string  | 是    | 无 |
+| displayName      | 控件左边的文字提示    | string | 是   | 无   |
+| defaultValue         | 控件的默认提交值 | string  | 否    | 无       |
+| isRequire       | 是否是必填项 | bool  | 否    | false       |
+| message      | 校验失败之后的提示文字 | object  | 否    | 无       |
+| disabled | 控件是否可以点击 | bool   | 否    | flase       |
+| checkType          | 内置的校验规则比如phone              |   string      |    否  |    无     |
+| length          | 限制字段的长度              |   number      |  否    |     无    |
+| checkReg          | 控件的校验正则              |    reg     |    否  |    无     |
+| colNum          | input type 是select的时候才会有这个选项，单选框的个数与下面options的长度对应    |    number     |   否   |     无    |
+| options          | 数组，每个元素是一个key，value的json，key为选择项的提示，value为选择项提交的值   |   array      |   否   |    无     |
+
 
 ##### 建议下载代码库，npm run start一下看一下demo，很快就能知道怎么使用了
 ![ScreenShot](/demo.png)
