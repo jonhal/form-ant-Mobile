@@ -43,21 +43,45 @@ class Index extends Component {
             formConfig,
         });
         } catch (e) {
-        console.error('json格式有误', e);
+            console.error('json格式有误', e);
         }
     };
 
+
+    makeDownload = (content, filename) => {
+        var eleLink = document.createElement('a');
+        eleLink.download = filename;
+        eleLink.style.display = 'none';
+        // 字符内容转变成blob地址
+        var blob = new Blob([content]);
+        eleLink.href = URL.createObjectURL(blob);
+        // 触发点击
+        document.body.appendChild(eleLink);
+        eleLink.click();
+        // 然后移除
+        document.body.removeChild(eleLink);
+    }
+
+    handleOutput = (e) => {
+        e.preventDefault();
+        let newContent = {
+            'settingMine':this.state.formConfig
+        }
+        let contentString =  'export default ' + JSON.stringify(newContent);
+        console.log(contentString)
+        this.makeDownload(contentString, 'Formjson.jsx');
+        Toast.info('下载代码，然后把导出文件覆盖到src/components/FormJson文件夹下，运行代码即可展示自定义表单', 10);
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
-        // alert(2);
         this.props.form.validateFields({ force: true }, (error) => {
-            // alert(1)
-        //   if (!error) {
-        //     console.log(this.props.form.getFieldsValue());
-        //   } else {
-        //     console.log(error);
-        //     alert('Validation failed');
-        //   }
+          if (!error) {
+            console.log(this.props.form.getFieldsValue());
+          } else {
+            console.log(error);
+            alert('Validation failed');
+          }
         });
       }
 
@@ -107,7 +131,7 @@ class Index extends Component {
                                     value={JSON.stringify(this.state.formConfig, null, 2)}
                                     onChange={this.changeJson}
                                 />
-                                <Button type="primary"  style={{ marginTop: '10px' }}>导出</Button>
+                                <Button type="primary"  style={{ marginTop: '10px' }} onClick={this.handleOutput}>导出</Button>
                             </Card>
                         </Flex.Item>
                         <Flex.Item>
