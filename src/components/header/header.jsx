@@ -23,7 +23,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                   表单的开始
+                   表单的演示
             </div>
         );
     }

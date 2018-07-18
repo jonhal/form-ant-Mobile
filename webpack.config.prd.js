@@ -8,10 +8,10 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');
 
 // 生成html文件
 // 项目相关配置(app-config)
-const APP_NAME_EN = 'dataMock';
-const APP_NAME_CN = '模块名称';
-const APP_ASSETS = 'assets/' + APP_NAME_EN;
-const APP_TEMPLATE = 'template/' + APP_NAME_EN;
+const APP_NAME_EN = 'formMake';
+const APP_NAME_CN = '表单创建';
+const APP_ASSETS = 'assets';
+const APP_TEMPLATE = 'template/';
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -33,7 +33,7 @@ module.exports = {
         filename: APP_ASSETS +  '/[name].min.js?[hash]',
         // // cmd、amd异步加载脚本配置名称
         // chunkFilename: '[name].chunk.js?[hash]',
-        publicPath: '/'
+        publicPath: './'
     },
 
     resolve: {
@@ -94,7 +94,7 @@ module.exports = {
         splitChunks: {
             cacheGroups: {
                 commons: {
-                    name: 'common.js?[hash]',
+                    name: 'common.js',
                     chunks: "initial",
                     minChunks: 2
                 }
@@ -106,7 +106,7 @@ module.exports = {
         new HtmlwebpackPlugin({
             title: APP_NAME_CN,
             template: path.join(__dirname, './src/index.html'),
-            filename: APP_TEMPLATE + '/index.html',
+            filename: './index.html',
             chunksSortMode: 'dependency',
             minify: {
                 minifyJS: true,

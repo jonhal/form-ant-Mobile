@@ -15,14 +15,14 @@ export default {
             'type': 'text',
             'name': 'trueName',
             'displayName': '文本框',
-            'defaultValue': '我是一个默认文本框',
+            'defaultValue': '我是一个不可修改的文本框',
         },
         {
             'type': 'input',
             'name': 'cardNo',
-            'displayName': '数字框',
+            'displayName': '我是一个输入框',
             'defaultValue': '',
-            'placeholder': '这是一个数字必填数字框',
+            'placeholder': '这是一个输入框',
             'isRequire': true,
             'message': '',
             'disabled': false,
@@ -52,17 +52,17 @@ export default {
             'colNum': 1,
             'options': OPTIONS.relation
         },
-        {
-            'type': 'select',
-            'name': 'businessAddress',
-            'displayName': '所在省市',
-            'defaultValue': '',
-            'isRequire': true,
-            'message': '',
-            'disabled': false,
-            'colNum': 3,
-            'options': CITYOPTIONS
-        },
+        // {
+        //     'type': 'select',
+        //     'name': 'businessAddress',
+        //     'displayName': '所在省市',
+        //     'defaultValue': '',
+        //     'isRequire': true,
+        //     'message': '',
+        //     'disabled': false,
+        //     'colNum': 3,
+        //     'options': CITYOPTIONS
+        // },
         {
             'type': 'imagePicker',
             'name': 'image',
