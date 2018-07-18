@@ -70,7 +70,7 @@ class Index extends Component {
         let contentString =  'export default ' + JSON.stringify(newContent);
         console.log(contentString)
         this.makeDownload(contentString, 'Formjson.jsx');
-        Toast.info('下载代码，然后把导出文件覆盖到src/components/FormJson文件夹下，运行代码即可展示自定义表单', 10);
+        Toast.info('下载成功，然后把导出文件覆盖到src/components/FormJson文件夹下，运行代码即可展示自定义表单', 10);
     }
 
     handleSubmit = (e) => {
