@@ -10,9 +10,7 @@ import {createForm} from 'rc-form';
 import TransForm from '../../components/TransForm/TransForm';
 // json
 import TransJson from '../../components/FormJson/FormJson';
-import CodeMirror from 'react-codemirror';
-import 'codemirror/mode/javascript/javascript';
-import 'codemirror/lib/codemirror.css';
+
 
 class Index extends Component {
     constructor(props) {
@@ -94,21 +92,6 @@ class Index extends Component {
                 <Header />
                 <div className="block">
                     <Flex>
-                        <Flex.Item>
-                            <Card>
-                                <CodeMirror
-                                    options={
-                                        {
-                                            mode: 'javascript',
-                                            lineNumbers: true
-                                        }
-                                    }
-                                    autoSave={true}
-                                    value={JSON.stringify(this.state.formConfig, null, 2)}
-                                    onChange={this.changeJson}
-                                />
-                            </Card>
-                        </Flex.Item>
                         <Flex.Item>
                             <Card>
                                 {list_tpl}
