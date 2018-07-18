@@ -1,0 +1,1 @@
+BUILD_SUBMITTER -u . -x -m FIS -m /fsg-fintech/data-optimus -c "cd   &&  sh build.sh"
