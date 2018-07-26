@@ -6,8 +6,8 @@ import React , { Component } from 'react';
 import './FormDemo.less';
 import Header from '../../components/header/header';
 import {Toast, List, Card, Flex, WhiteSpace, Button, InputItem} from 'antd-mobile';
-import {createForm} from 'rc-form';
-import TransForm from '../../components/TransForm/TransForm';
+import {createForm} from 'rc-form/lib';
+import TransForm from '../../components/TransForm/H5TransForm';
 // json
 import TransJson from '../../components/FormJson/FormJson';
 
@@ -89,7 +89,7 @@ class Index extends Component {
             </List>
         return (
             <div>
-                <Header />
+                <Header title="h5 表单的演示"/>
                 <div className="block">
                     <Flex>
                         <Flex.Item>

@@ -9,12 +9,11 @@ import React from 'react';
 import {render} from 'react-dom';
 // 引入React-Router模块
 import { BrowserRouter as Router, Route, Link ,HashRouter} from "react-router-dom";
-
 // 顶部导航
 import Header from './components/header/header';
 // 引入单个页面（包括嵌套的子页面）
-import FormDemo from './page/FormDemo/FormDemo';
-import page from './page/page1/page1';
+import FormDemo from './page/H5FormDemo/H5FormDemo';
+import Index from './page/index/index';
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -43,8 +42,8 @@ render((
                         <Link to="/page1">page1</Link>
                     </li>
                 </ul> */}
-                <Route exact path="/" component={FormDemo} />
-                <Route exact path="/page1" component={page} />
+                <Route exact path="/" component={Index} />
+                <Route exact path="/h5" component={FormDemo} />
             </div>
         </HashRouter>
     </div>
