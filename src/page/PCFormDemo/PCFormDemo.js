@@ -5,11 +5,14 @@
 import React , { Component } from 'react';
 import './FormDemo.less';
 import Header from '../../components/header/header';
-import {Toast, List, Card, Flex, WhiteSpace, Button, InputItem} from 'antd';
+import {Toast, List, WhiteSpace, Button, InputItem, Row, Col } from 'antd';
 import {createForm} from 'rc-form/lib';
 import QueryForm from '../../components/PcTransForm/queryForm/queryForm';
 // json
 import TransJson from '../../conf/common/FormJson';
+import CodeMirror from 'react-codemirror';
+import 'codemirror/mode/javascript/javascript';
+import 'codemirror/lib/codemirror.css';
 
 class Index extends Component {
     constructor(props) {
@@ -62,7 +65,25 @@ class Index extends Component {
             <div>
                 <Header title="pc 表单的演示"/>
                 <div className="block">
-                    <QueryForm data={this.state.formConfig}/>
+                    <Row>
+                        <Col span={12}>
+                            <CodeMirror
+                                options={
+                                    {
+                                        mode: 'javascript',
+                                        lineNumbers: true
+                                    }
+                                }
+                                autoSave={true}
+                                value={JSON.stringify(this.state.formConfig, null, 2)}
+                                onChange={this.changeJson}
+                            />
+                            <Button type="primary"  style={{ marginTop: '10px' }} onClick={this.handleOutput}>导出</Button>
+                        </Col>
+                        <Col span={12}>
+                            <QueryForm data={this.state.formConfig}/>
+                        </Col>
+                   </Row>
                 </div>
             </div>
         )
