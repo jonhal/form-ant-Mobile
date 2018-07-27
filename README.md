@@ -5,7 +5,7 @@ config json then make form
 
 通过json配置表，可以生成一个表单，表单中的控件基于ant生成
 
-[效果，请用力戳戳戳戳戳戳戳戳戳戳戳戳戳戳戳我](https://jonhal.github.io/form-ant-Mobile/#/) **支持配置文件下载，导出配置文件覆盖到src/components/FormJson文件夹**
+[效果，请用力戳戳戳戳戳戳戳戳戳戳戳戳戳戳戳我](https://jonhal.github.io/make-form-ant/#/) **支持配置文件下载，导出配置文件覆盖到src/components/FormJson文件夹**
 
 ### Prerequisites
 基于ant-mobile，有一个ant-mobile可运行的环境
