@@ -115,7 +115,7 @@ class Index extends Component {
             </List>
         return (
             <div>
-                <Header />
+                <Header title="pc 表单的演示"/>
                 <div className="block">
                     <Flex>
                         <Flex.Item>
