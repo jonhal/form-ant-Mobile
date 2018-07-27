@@ -7,9 +7,9 @@ import './FormDemo.less';
 import Header from '../../components/header/header';
 import {Toast, List, Card, Flex, WhiteSpace, Button, InputItem} from 'antd-mobile';
 import {createForm} from 'rc-form/lib';
-import TransForm from '../../components/TransForm/H5TransForm';
+import TransForm from '../../components/H5TransForm/H5TransForm';
 // json
-import TransJson from '../../components/FormJson/FormJson';
+import TransJson from '../../conf/common/FormJson';
 
 
 class Index extends Component {
@@ -41,7 +41,7 @@ class Index extends Component {
             formConfig,
         });
         } catch (e) {
-        console.error('json格式有误', e);
+            console.error('json格式有误', e);
         }
     };
 

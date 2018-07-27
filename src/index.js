@@ -12,7 +12,8 @@ import { BrowserRouter as Router, Route, Link ,HashRouter} from "react-router-do
 // 顶部导航
 import Header from './components/header/header';
 // 引入单个页面（包括嵌套的子页面）
-import FormDemo from './page/H5FormDemo/H5FormDemo';
+import FormDemoH5 from './page/H5FormDemo/H5FormDemo';
+import FormDemoPC from './page/PCFormDemo/PCFormDemo';
 import Index from './page/index/index';
 
 
@@ -43,7 +44,8 @@ render((
                     </li>
                 </ul> */}
                 <Route exact path="/" component={Index} />
-                <Route exact path="/h5" component={FormDemo} />
+                <Route exact path="/h5" component={FormDemoH5} />
+                <Route exact path="/pc" component={FormDemoPC} />
             </div>
         </HashRouter>
     </div>
