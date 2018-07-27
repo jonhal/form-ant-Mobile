@@ -6,10 +6,10 @@ import React , { Component } from 'react';
 import './FormDemo.less';
 import Header from '../../components/header/header';
 import {Toast, List, Card, Flex, WhiteSpace, Button, InputItem} from 'antd-mobile';
-import {createForm} from 'rc-form';
-import TransForm from '../../components/TransForm/TransForm';
+import {createForm} from 'rc-form/lib';
+import TransForm from '../../components/H5TransForm/H5TransForm';
 // json
-import TransJson from '../../components/FormJson/FormJson';
+import TransJson from '../../conf/common/FormJson';
 import CodeMirror from 'react-codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css';

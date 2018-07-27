@@ -13,6 +13,7 @@
   "author": "ljh",
   "license": "MIT",
   "devDependencies": {
+    "antd": "^3.7.2",
     "antd-mobile": "^2.2.1",
     "autoprefixer": "^7.1.6",
     "babel-core": "^6.25.0",

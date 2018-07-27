@@ -5,7 +5,7 @@
 
 import React from 'react';
 import {List, InputItem, Picker, ImagePicker, Popover} from 'antd-mobile';
-import './TransForm.less';
+import './H5TransForm.less';
 
 const Item = List.Item;
 
