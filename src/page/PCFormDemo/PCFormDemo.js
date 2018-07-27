@@ -5,7 +5,7 @@
 import React , { Component } from 'react';
 import './FormDemo.less';
 import Header from '../../components/header/header';
-import {Toast, List, WhiteSpace, Button, InputItem, Row, Col } from 'antd';
+import {notification, List, WhiteSpace, Button, InputItem, Row, Col } from 'antd';
 import {createForm} from 'rc-form/lib';
 import QueryForm from '../../components/PcTransForm/queryForm/queryForm';
 // json
@@ -22,6 +22,15 @@ class Index extends Component {
         }
     }
 
+
+    openNotificationWithIcon = (type) => {
+        notification.open({
+          message: '下载成功',
+          description: '把导出文件覆盖到src/components/FormJson文件夹下，运行代码即可展示自定义表单',
+          duration: 60,
+        });
+    };
+      
 
     handleImagePickerChange(files, type, index) {
         this.setState({
@@ -45,6 +54,35 @@ class Index extends Component {
             console.error('json格式有误', e);
         }
     };
+
+
+
+    makeDownload = (content, filename) => {
+        var eleLink = document.createElement('a');
+        eleLink.download = filename;
+        eleLink.style.display = 'none';
+        // 字符内容转变成blob地址
+        var blob = new Blob([content]);
+        eleLink.href = URL.createObjectURL(blob);
+        // 触发点击
+        document.body.appendChild(eleLink);
+        eleLink.click();
+        // 然后移除
+        document.body.removeChild(eleLink);
+    }
+
+
+
+    handleOutput = (e) => {
+        e.preventDefault();
+        let newContent = {
+            'settingMine':this.state.formConfig
+        }
+        let contentString =  'export default ' + JSON.stringify(newContent);
+        console.log(contentString)
+        this.makeDownload(contentString, 'Formjson.jsx');
+        this.openNotificationWithIcon('success');
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();

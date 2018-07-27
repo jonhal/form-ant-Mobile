@@ -21,7 +21,7 @@ export default class Index extends React.Component {
             <div>
                 <Header />
                 <h1>表单控件生成</h1>
-                <div className="content">
+                <div className="content index_content">
                     <Link to="/h5">h5 表单 </Link>
                     <Link to="/pc">pc 表单 </Link>
                 </div>
